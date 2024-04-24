@@ -1,4 +1,5 @@
 const sequelize = require('./config/database'); // This points to your new Sequelize setup
+const {User} = require('./models/user.model'); // This points to your new Sequelize setup
 const app = require('./app'); // Import your Express app
 const config = require('./config/config'); // Configuration
 const logger = require('./config/logger'); // Logger for logging information

@@ -1,18 +1,17 @@
 const { Sequelize } = require('sequelize');
-const config = require('./config'); // Ensure you're getting your config setup
+const config = require('./config');
 
 // Create the Sequelize instance with PostgreSQL
 const sequelize = new Sequelize(
-  config.sequelize.database, // Database name
-  config.sequelize.username, // Username
-  config.sequelize.password, // Password
+  config.sequelize.database,
+  config.sequelize.username,
+  config.sequelize.password,
   {
-    host: config.sequelize.host, // Host
-    port: config.sequelize.port, // Port
-    dialect: config.sequelize.dialect, // 'postgres' for PostgreSQL
-    logging: config.sequelize.logging, // Logging depending on the environment
+    host: config.sequelize.host,
+    port: config.sequelize.port,
+    dialect: config.sequelize.dialect,
+    logging: config.sequelize.logging,
   }
 );
 
-// Export the Sequelize instance for use in other files
 module.exports = sequelize;

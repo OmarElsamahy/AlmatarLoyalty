@@ -1,5 +1,5 @@
 const { DataTypes, Model } = require('sequelize');
-const sequelize = require('../config/database'); // Assume this is your Sequelize instance setup
+const sequelize = require('../config/database');
 const { tokenTypes } = require('../config/tokens');
 
 class Token extends Model {}
@@ -9,12 +9,12 @@ Token.init(
     token: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true, // This prevents duplicate tokens
+      unique: true,
     },
     userId: {
-      type: DataTypes.INTEGER, // The data type for references to other models
+      type: DataTypes.INTEGER,
       references: {
-        model: 'Users',
+        model: 'users',
         key: 'id',
       },
       allowNull: false,
@@ -35,7 +35,9 @@ Token.init(
   {
     sequelize,
     modelName: 'Token',
-    tableName: 'tokens', // Name of the table in the database
-    timestamps: true, // This will automatically create 'createdAt' and 'updatedAt'
+    tableName: 'tokens',
+    timestamps: true,
   }
 );
+
+module.exports = Token; // Ensure the model is exported

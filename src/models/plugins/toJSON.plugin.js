@@ -3,14 +3,14 @@
  * - Removes fields like `__v`, `createdAt`, `updatedAt`, and others as needed
  * - Applies a custom transformation function if provided
  *
- * @param {Object} obj - The Sequelize model instance to transform
  * @param {Array<string>} excludeFields - List of fields to remove
  * @param {Function} customTransform - Optional custom transformation function
  * @returns {Object} - The transformed JSON object
  */
-const toJSON = (obj, excludeFields = [], customTransform = null) => {
+const toJSON = (excludeFields = [], customTransform = null) => {
+  return function () {
     // Convert the model instance to a plain JavaScript object
-    let result = obj.get({ plain: true });
+    let result = this.get({ plain: true });
 
     // Remove specific fields
     excludeFields.forEach((field) => {
@@ -24,5 +24,6 @@ const toJSON = (obj, excludeFields = [], customTransform = null) => {
 
     return result;
   };
+};
 
-  module.exports = toJSON;
+module.exports = toJSON;

@@ -92,7 +92,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTcxMzk1ODE4MywiZXhwIjoxNzE2NTQ2NTgzLCJ0eXBlIjoicmVmcmVzaCJ9.6jNFA1PEOaRecMHhA5uLRIzY0s7i5QE1hGc8CmZ6ecw\"\n}",
+							"raw": "{\n    \"refreshToken\": \"\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -126,7 +126,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTcxMzk2ODM4NSwiZXhwIjoxNzE2NTU2Nzg1LCJ0eXBlIjoicmVmcmVzaCJ9.qDFwhs4vZusAexslKZJkgxwDu2B318jBBL8IxdxO6Rg\"\n}",
+							"raw": "{\n    \"refreshToken\": \"\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"

@@ -39,6 +39,10 @@ Ensure you have the following installed:
 ## Running The Application
 - You could use npm start -> to run using PM2 process manager
 - npm run dev -> to run using nodemon
+- Workflow is as follows ->
+     - Auth apis for user to sign up/ login , reset and forget password
+     - user apis to list users and get user details
+     - transfer apis for user to create a transfer, confirm a transfer he created and list all transactions
 
 ## Testing
 npm test

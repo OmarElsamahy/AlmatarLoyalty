@@ -9,7 +9,7 @@
   "scripts": {
     "start": "pm2 start ecosystem.config.json --no-daemon",
     "dev": "cross-env NODE_ENV=development nodemon src/index.js",
-    "test": "mocha --recursive --timeout 10000",
+    "test": "jest test/integration/user.test.js; jest test/integration/transfer.test.js; jest test/integration/auth.test.js",
     "coverage": "jest -i --coverage",
     "coverage:coveralls": "jest -i --coverage --coverageReporters=text-lcov | coveralls",
     "lint": "eslint .",

@@ -24,8 +24,8 @@ Ensure you have the following installed:
 
 ## Installation
 1. Clone the repository:
-   git clone https://github.com/yourusername/yourproject.git
-   cd yourproject
+   git clone https://github.com/OmarElsamahy/almatarloyalty.git
+   cd almatarloyalty
 
 ## Environment Variables
 2. Install dependencies:

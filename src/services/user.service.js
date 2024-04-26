@@ -52,8 +52,6 @@ const queryUsers = async (filter = {}, options = {}) => {
 const getUserById = async (id) => {
   const user = await User.findByPk(id);
   if (!user) {
-    console.log(id);
-    console.log("id");
     throw new ApiError(httpStatus.NOT_FOUND, 'User not found');
   }
   return user;

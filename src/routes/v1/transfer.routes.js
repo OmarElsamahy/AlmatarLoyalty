@@ -42,20 +42,19 @@ router
   );
 
 module.exports = router;
-
 /**
  * @swagger
  * tags:
- *   name: Transfers
- *   description: Operations related to point transfers between users
+ *   - name: Transfers
+ *     description: Operations related to point transfers between users
  */
 
 /**
  * @swagger
  * /transfers:
  *   post:
- *     summary: Create a transfer
- *     description: Create a new transfer of loyalty points to another user.
+ *     summary: Create a new transfer
+ *     description: Create a transfer of loyalty points to another user.
  *     tags: [Transfers]
  *     security:
  *       - bearerAuth: []
@@ -85,66 +84,15 @@ module.exports = router;
  *             schema:
  *               $ref: '#/components/schemas/Transfer'
  *       "400":
- *         description: Invalid input
+ *         description: Bad request
  *       "401":
  *         $ref: '#/components/responses/Unauthorized'
  *       "403":
  *         $ref: '#/components/responses/Forbidden'
- *
- * /transfers/{transferId}/confirm:
- *   post:
- *     summary: Confirm a transfer
- *     description: Confirm a transfer created earlier.
- *     tags: [Transfers]
- *     security:
- *       - bearerAuth: []
- *     parameters:
- *       - in: path
- *         name: transferId
- *         required: true
- *         schema:
- *           type: string
- *         description: ID of the transfer to confirm
- *     responses:
- *       "200":
- *         description: Transfer confirmed
- *         content:
- *           application/json:
- *             schema:
- *               $ref: '#/components/schemas/Transfer'
- *       "400":
- *         description: Invalid input
- *       "401":
- *         $ref: '#/components/responses/Unauthorized'
- *       "403":
- *         $ref: '#/components/responses/Forbidden'
- *
- * /transfers/{transferId}:
- *   get:
- *     summary: Get a specific transfer
- *     description: Retrieve a transfer by its ID.
- *     tags: [Transfers]
- *     security:
- *       - bearerAuth: []
- *     parameters:
- *       - in: path
- *         name: transferId
- *         required: true
- *         schema:
- *           type: string
- *         description: ID of the transfer
- *     responses:
- *       "200":
- *         description: OK
- *         content:
- *           application/json:
- *             schema:
- *               $ref: '#/components/schemas/Transfer'
- *       "401":
- *         $ref: '#/components/responses/Unauthorized'
- *       "403":
- *         $ref: '#/components/responses/Forbidden'
- *
+ */
+
+/**
+ * @swagger
  * /transfers:
  *   get:
  *     summary: Get all transfers for a user
@@ -154,7 +102,7 @@ module.exports = router;
  *       - bearerAuth: []
  *     responses:
  *       "200":
- *         description: OK
+ *         description: Successfully retrieved all transfers for the user
  *         content:
  *           application/json:
  *             schema:
@@ -167,3 +115,62 @@ module.exports = router;
  *         $ref: '#/components/responses/Forbidden'
  */
 
+/**
+ * @swagger
+ * /transfers/{transferId}/confirm:
+ *   post:
+ *     summary: Confirm a transfer
+ *     description: Confirm a pending transfer.
+ *     tags: [Transfers]
+ *     security:
+ *       - bearerAuth: []
+ *     parameters:
+ *       - in: path
+ *         name: transferId
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: ID of the transfer to confirm
+ *     responses:
+ *       "200":
+ *         description: Successfully confirmed transfer
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Transfer'
+ *       "400":
+ *         description: Bad request
+ *       "401":
+ *         $ref: '#/components/responses/Unauthorized'
+ *       "403":
+ *         $ref: '#/components/responses/Forbidden'
+ */
+
+/**
+ * @swagger
+ * /transfers/{transferId}:
+ *   get:
+ *     summary: Get a specific transfer by ID
+ *     description: Retrieve a transfer by its ID.
+ *     tags: [Transfers]
+ *     security:
+ *       - bearerAuth: []
+ *     parameters:
+ *       - in: path
+ *         name: transferId
+ *         required: true
+ *         schema:
+ *           type: string
+ *           description: ID of the transfer to retrieve
+ *     responses:
+ *       "200":
+ *         description: Successfully retrieved the transfer
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Transfer'
+ *       "401":
+ *         $ref: '#/components/responses/Unauthorized'
+ *       "403":
+ *         $ref: '#/components/responses/Forbidden'
+ */

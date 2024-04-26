@@ -47,8 +47,6 @@ const refreshAuth = async (refreshToken) => {
     await refreshTokenDoc.destroy();
     return tokenService.generateAuthTokens(user);
   } catch (error) {
-    console.log(error);
-    console.log("error");
     throw new ApiError(httpStatus.UNAUTHORIZED, 'Please authenticate');
   }
 };
@@ -74,8 +72,6 @@ const resetPassword = async (resetPasswordToken, newPassword) => {
       },
     });
   } catch (error) {
-    console.log(error);
-    console.log("error");
     throw new ApiError(httpStatus.UNAUTHORIZED, 'Password reset failed');
   }
 };

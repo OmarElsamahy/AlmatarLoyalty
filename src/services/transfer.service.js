@@ -98,7 +98,6 @@ const confirmTransfer = async (transferId, user) => {
  */
 const getTransferById = async (transferId, user) => {
   const transfer = await Transfer.findByPk(transferId);
-
   if (!transfer) {
     throw new ApiError(httpStatus.NOT_FOUND, 'Transfer not found');
   }

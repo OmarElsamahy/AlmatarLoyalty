@@ -33,11 +33,12 @@ Ensure you have the following installed:
 3. Set up the database:
     Create a PostgreSQL database (e.g., yourprojectdb).
     Configure your database connection in src/config/database.js or through environment variables (see below).
-4. Setup Environment files 
+4. Setup Environment files (copy .envv.example to .env and adjust your settings)
+5. api/v1/docs is only present in development 
 
 ## Running The Application
 - You could use npm start -> to run using PM2 process manager
-- npm dev -> to run using nodemon
+- npm run dev -> to run using nodemon
 
 ## Testing
 npm test
